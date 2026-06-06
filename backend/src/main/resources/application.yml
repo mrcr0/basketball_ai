@@ -1,0 +1,102 @@
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  global-config:
+    db-config:
+      id-type: auto
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,application/javascript,text/css,text/html,text/plain,text/xml
+    min-response-size: 512
+
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/basketball_db?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true&cachePrepStmts=true&useServerPrepStmts=true
+    username: root
+    password: 190304701x
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 300000
+      connection-timeout: 20000
+      max-lifetime: 1800000
+      leak-detection-threshold: 60000
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 500MB
+
+  h2:
+    console:
+      enabled: false
+
+  sql:
+    init:
+      mode: never
+
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: your_email@qq.com
+    password: your_email_password
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+app:
+  frontend-url: http://localhost:5173
+  upload:
+    base-dir: uploads
+    base-url: /uploads
+  tencent:
+    sports:
+      enabled: false
+      base-url: https://open.sports.qq.com
+      api-key: your_api_key_here
+      api-secret: your_api_secret_here
+      connect-timeout: 5000
+      read-timeout: 10000
+      cache-ttl-seconds: 300
+      max-requests-per-minute: 50
+      refresh-interval-ms: 1800000
+      match-path: /api/v1/basketball/matches
+      team-path: /api/v1/basketball/teams
+      player-path: /api/v1/basketball/players
+      news-path: /api/v1/basketball/news
+      nba-league-id: "1"
+      fiba-league-id: "2"
+      cba-league-id: "3"
+
+ai:
+  deepseek:
+    api-key: sk-820203455d9b4035943ed6815a8631cb
+    api-url: https://api.deepseek.com/v1/chat/completions
+    model: deepseek-chat
+    pro-api-url: https://api.deepseek.com/v1/chat/completions
+    pro-model: deepseek-v4-pro
+
+jwt:
+  secret: BasketballTraining2024SecretKeyForJWTTokenGenerationMustBe32PlusChars
+  expire: 86400000

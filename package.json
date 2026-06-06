@@ -1,0 +1,25 @@
+{
+  "name": "basketball-training-platform",
+  "version": "1.0.0",
+  "description": "基于AI的科学智能篮球训练Web平台",
+  "private": true,
+  "scripts": {
+    "frontend": "cd frontend && npm run",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:preview": "cd frontend && npm run preview",
+    "install:frontend": "cd frontend && npm install"
+  },
+  "keywords": [
+    "basketball",
+    "training",
+    "ai",
+    "vue"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
